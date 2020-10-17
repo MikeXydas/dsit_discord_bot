@@ -1,9 +1,10 @@
 import logging
 import requests
 
-from discord.ext import commands
+from discord.ext import commands, tasks
 
-from .announcements import parse_dsit_announcements, create_announcements_response
+from .announcements import parse_dsit_announcements, create_announcements_response, update_announcements, \
+    alert_new_announcement_response
 
 
 def boot_up():
@@ -29,6 +30,7 @@ def boot_up():
     @client.event
     async def on_ready():
         logging.info("Bot is ready!")
+        task_update_announcements.start()
 
     @client.command(aliases=['announcements'])
     async def send_announcements(ctx, limit=5):
@@ -40,5 +42,16 @@ def boot_up():
             limit: Limit of the announcements that will be printed
         """
         await ctx.send(create_announcements_response(announcements, limit))
+
+    @tasks.loop(minutes=10)
+    async def task_update_announcements():
+        # CARE: This must be the id of the channel we want to send the update and is different from server to server
+        channel = client.get_channel(766929768753922051)
+        new_ann = update_announcements(announcements_url, announcements)
+        if new_ann:
+            logging.info('Updated announcements | Found new announcement')
+            await channel.send(alert_new_announcement_response(announcements[0]))
+        else:
+            logging.info('Updated announcements | No new announcement')
 
     client.run('NzY2OTI2NjYwODEyOTMxMTAy.X4qeHA.T7buaU3sqPwixfpmKCVekR0rQU4')

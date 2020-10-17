@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import logging
 import datetime
-
+import json
 
 @dataclass
 class Announcement:
@@ -78,3 +78,52 @@ def create_announcements_response(announcements, limit=5):
                            "```"
 
     return response_string
+
+
+def update_announcements(url, old_announcements):
+    """
+    Updates the announcements and returns if there was a new update
+    Args:
+        url: The url of the DSIT announcements homepage
+        old_announcements: A list of Announcement objects that will get updated
+
+    Returns:
+        Boolean, True if there was a new announcement or False if there was not
+    """
+    try:
+        old_announcements[:] = parse_dsit_announcements(url)
+    except requests.exceptions.RequestException:
+        logging.warning('Failed to update announcements')
+        return False
+
+    ann_config = read_config()
+    old_date = ann_config['last_announcement']
+    new_date = old_announcements[0].date
+
+    if old_date == new_date:
+        return False
+    else:
+        ann_config['last_announcement'] = new_date
+        update_config(ann_config)  # We must update the time of our new latest announcement
+        return True
+
+
+def alert_new_announcement_response(new_announcement):
+    response_text = f"```css\n" \
+                    "New Announcement from DSIT!\n" \
+                    "```\n" \
+                    f"->\t**{new_announcement.title}** - *{new_announcement.date}*\n" \
+                    f"\t\tLink: <{new_announcement.link}>\n\n"
+
+    return response_text
+
+
+def read_config():
+    with open('dsit_bot/config/announcements_config.json') as json_file:
+        ann_config = json.load(json_file)
+    return ann_config
+
+
+def update_config(new_configs):
+    with open('dsit_bot/config/announcements_config.json', 'w') as outfile:
+        json.dump(new_configs, outfile)

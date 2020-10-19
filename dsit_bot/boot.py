@@ -46,6 +46,7 @@ def boot_up():
     @tasks.loop(minutes=10)
     async def task_update_announcements():
         # CARE: This must be the id of the channel we want to send the update and is different from server to server
+        # In order for the channel id to be visible you must enable Discord's developer mode.
         channel = client.get_channel(766929768753922051)
         new_ann = update_announcements(announcements_url, announcements)
         if new_ann:
@@ -54,4 +55,7 @@ def boot_up():
         else:
             logging.info('Updated announcements | No new announcement')
 
-    client.run('NzY2OTI2NjYwODEyOTMxMTAy.X4qeHA.T7buaU3sqPwixfpmKCVekR0rQU4')
+    # Reading the token (DO NOT INCLUDE IT IN THE REPO) and running the bot
+    with open('dsit_bot/config/bot_token.tok', "r") as token_file:
+        bot_token = token_file.read()
+    client.run(bot_token)

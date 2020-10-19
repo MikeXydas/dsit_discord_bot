@@ -7,6 +7,7 @@ import datetime
 import json
 import pytz
 
+
 @dataclass
 class Announcement:
     title: str
@@ -38,10 +39,13 @@ def parse_dsit_announcements(url):
     articles = announce_soup.find_all('article')
 
     def parse_announcement(announcement):
-        # Date parsing, converting to local timezone and casting again as string
+        # Date parsing
         date_str = announcement.find('span', attrs={'class': 'updated'})
-        date_time_obj = datetime.datetime.strptime(date_str.text, '%Y-%m-%dT%H:%M:%S%z')\
-            .astimezone(tz=pytz.timezone('Europe/Athens'))
+
+        # The actual time we get from the DSIT announcement page is in Athens timezone, however the provided one,
+        # using %z, is UTC. We fix that using .replace
+        date_time_obj = datetime.datetime.strptime(date_str.text, '%Y-%m-%dT%H:%M:%S%z') \
+            .replace(tzinfo=pytz.timezone('Europe/Athens'))
 
         # Dates are surprisingly not ordered since we extract the last update time and not posting time
         converted_datetime = date_time_obj.strftime("%d-%m-%Y %H:%M")

@@ -117,7 +117,7 @@ def update_announcements(url, old_announcements):
 
 def alert_new_announcement_response(new_announcement):
     response_text = f"```css\n" \
-                    "New Announcement from DSIT!\n" \
+                    "New or Updated Announcement from DSIT!\n" \
                     "```\n" \
                     f"->\t**{new_announcement.title}** - *{new_announcement.date}*\n" \
                     f"\t\tLink: <{new_announcement.link}>\n\n"

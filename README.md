@@ -36,6 +36,11 @@ I would be more than happy to send me ideas, issues and PRs
     5. From the root directory of the project run `poetry run python3 main.py`
     6. To test if the bot is running got to your dev server and type in any chat `!announcements` expecting
        the last 5 announcements of DSIT to appear
+       
+4. **(Alternatively) Run the bot on a docker container**
+    1. Create a directory anywhere containing bot_token.tok and announcement_config.json
+    2. Build the docker image ``docker build . -t <tag>``
+    3. Run the container ``docker run -v /path/to/config/directory:/app/dsit_bot/config <tag> 
 
 **Note**: For the notification of a new announcement the bot requires a text channel ID that will
 print the announcement. Currently, I have it hardcoded as the channel id of the #general in our server 

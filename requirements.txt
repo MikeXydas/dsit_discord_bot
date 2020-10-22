@@ -1,24 +1,16 @@
-aiohttp @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/de/bf/45/74ba1a551d4e930a052dcb9cd6e3828fa91f7412934d5cd7537778198d/aiohttp-3.6.3.tar.gz
-async-timeout @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/0d/5d/3e/630122e534c1b25e36c3142597c4b0b2e9d3f2e0a9cea9f10ac219f9a7/async_timeout-3.0.1-py3-none-any.whl
-atomicwrites @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/ca/84/dd/000dbc2864acca52a74a82da8b597c9e4778eb3fe64687a31a8095ad5f/atomicwrites-1.4.0-py2.py3-none-any.whl
-attrs @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/7f/e7/44/32ca3c400bb4d8a2f1a91d1d3f22bbaee2f4727a037aad898fbf5d36ce/attrs-20.2.0-py2.py3-none-any.whl
-beautifulsoup4 @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/e0/38/d7/f9b232f345b5354d13487afd553ef917480088fda47bb62e056a3a7924/beautifulsoup4-4.9.3-py3-none-any.whl
-certifi @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/30/e0/fe/02be0b0d7bf5e7da8f0584a43b64890d8956bd395d188597ed45f16834/certifi-2020.6.20-py2.py3-none-any.whl
-chardet @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/c2/02/35/0d93b80c730b360c5e3d9bdc1b8d1929dbd784ffa8e3db025c14c045e4/chardet-3.0.4-py2.py3-none-any.whl
-colorama @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/b0/f3/a3/cf94f06cbe1d286a25116cfe54d5a75cb1c4b54d15b2b1b4fc03a7f657/colorama-0.4.4-py2.py3-none-any.whl
-discord.py @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/35/e1/f4/65d0d8b75a8bfaa33479f45058c23a013cdef11a94f434b952ff69bd6c/discord.py-1.5.0-py3-none-any.whl
-dsit-bot==0.1.0
-idna @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/9e/f9/03/6066b92d35486e7f0d4f310126e3c60a6619726e43ef98e32e105b5c52/idna-2.10-py2.py3-none-any.whl
-more-itertools @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/4c/fd/53/9097cf42a8d83ecf946d50073db7b87b71c5ed02df4a5bdb8b6b546c8e/more_itertools-8.5.0-py3-none-any.whl
-multidict @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/50/38/7e/692443dbaa9eaa50b4ed47ebf97d0332d2609f48e1558755eedc31a200/multidict-4.7.6-cp38-cp38-win32.whl
-packaging @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/09/cd/29/a435224f3203dfba4af491065632910aadb6f3ddd87ce3c6590ac29e7a/packaging-20.4-py2.py3-none-any.whl
-pluggy @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/9c/e5/0b/2d64d03361a081edeb5d2ec5f286ccf9719587781fbf6822e1b6384c27/pluggy-0.13.1-py2.py3-none-any.whl
-py @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/f5/51/7d/d8aec03f59299351465053794c7b1f0e0e7a918e4a67911664f83929af/py-1.9.0-py2.py3-none-any.whl
-pyparsing @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/da/e7/3d/1780282f558e5fd157bf708b28b8ba0d08323ef6bc5b6396139ce38a0b/pyparsing-2.4.7-py2.py3-none-any.whl
-pytest @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/9d/40/6b/50d2cb06df545acea43c65379c5456f4fbc703115a703bc7cd433ddf70/pytest-5.4.3-py3-none-any.whl
-requests @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/1e/9a/75/03520154e60eb952530469162a6d43cd95ece92de272e2c3392058401c/requests-2.24.0-py2.py3-none-any.whl
-six @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/be/98/c7/69fe6fea7a59659af1c6260899226129565330b1e07c9c5b3769be76bf/six-1.15.0-py2.py3-none-any.whl
-soupsieve @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/8a/6d/d7/3eff7b8adc76fd689a0934f0bf43706f8328dc91c0ebe8c4f2feea9e1f/soupsieve-2.0.1-py3-none-any.whl
-urllib3 @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/f1/9d/c1/59337b0152731606a3af28776c812c0d0dc0f2a9066d7674911e9cbbd2/urllib3-1.25.10-py2.py3-none-any.whl
-wcwidth @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/36/68/e2/7232f431072d5e8aeec124120b9a1d095d45da10311d271fac10982473/wcwidth-0.2.5-py2.py3-none-any.whl
-yarl @ file:///C:/Users/mikev/AppData/Local/pypoetry/Cache/artifacts/ed/08/bb/855de848bbacee65647dc7d54191616e6ccf04c048b2178423e7fcfb96/yarl-1.5.1-cp38-cp38-win32.whl
+aiohttp==3.6.3; python_full_version >= "3.5.3"
+async-timeout==3.0.1; python_full_version >= "3.5.3"
+attrs==20.2.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
+beautifulsoup4==4.9.3
+certifi==2020.6.20
+chardet==3.0.4
+discord.py==1.5.0; python_full_version >= "3.5.3"
+idna-ssl==1.1.0; python_version < "3.7"
+idna==2.10; python_version >= "2.7" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.4.0" and python_version < "3.7"
+multidict==4.7.6; python_version >= "3.5"
+pytz==2020.1
+requests==2.24.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+soupsieve==2.0.1; python_version >= "3.5"
+typing-extensions==3.7.4.3; python_version < "3.7"
+urllib3==1.25.10; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
+yarl==1.5.1; python_version >= "3.5"

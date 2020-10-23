@@ -47,7 +47,7 @@ def boot_up():
     async def task_update_announcements():
         # CARE: This must be the id of the channel we want to send the update and is different from server to server
         # In order for the channel id to be visible you must enable Discord's developer mode.
-        channel = client.get_channel(761925517661175812)
+        channel = client.get_channel(766929768753922051)
         new_ann = update_announcements(announcements_url, announcements)
         if new_ann:
             logging.info('Updated announcements | Found new announcement')

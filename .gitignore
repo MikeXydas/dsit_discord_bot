@@ -1,3 +1,6 @@
+# Bot Config Files
+/dsit_bot/config/bot_token.tok
+
 # Pycharm files
 .idea/
 
@@ -139,4 +142,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-/dsit_bot/config/bot_token.tok

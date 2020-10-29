@@ -11,7 +11,7 @@ I would be more than happy to send me ideas, issues and PRs
   
 ## Setting Up
 
-**Creating a Discord Bot**  
+**Creating a development Discord Bot**  
 1. First create a discord server you will use to test the bot (name does not matter)
 2. Go to https://discord.com/developers/applications and press `New Application` (the name does not matter)
 3. From the left go to Bot > Add Bot > Yes
@@ -49,7 +49,7 @@ print the announcement. Currently, I have it hardcoded as the channel id of the 
 For now you should follow the steps below to fix it:
 1. Go to Discord User Settings > Appearance > Enable Developer Mode
 2. Go to you dev server > right click on #general > Copy Id
-3. Paste it in the dsit_bot/boot.py, line 50 (currently the id you must change is 766929768753922051)
+3. Paste it in the dsit_bot/boot.py, line 50 (currently the id you must change is `766929768753922051`)
 
 Feel free to tell me if there are any mistakes, needed clarifications or in general if you are having
 trouble setting it up.

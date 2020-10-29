@@ -7,12 +7,33 @@ import datetime
 import json
 import pytz
 
+from .settings import bot_settings
+
 
 @dataclass
 class Announcement:
     title: str
     date: str
     link: str
+
+
+def initialize_announcements():
+    """
+    Initializes a list of announcements that are requested and parsed from the DSIT announcements page.
+
+    Returns:
+        A list of Announcement objects
+    """
+    announcements_url = bot_settings['announcements']['url']
+    announcements = None
+    try:
+        logging.debug('Requesting announcements from DSIT announcement page')
+        announcements = parse_dsit_announcements(announcements_url)
+        logging.debug('Successfully parsed DSIT announcements')
+    except requests.exceptions.RequestException:
+        logging.error(f'Could not reach DSIT announcement page using {announcements_url}')
+
+    return announcements
 
 
 def parse_dsit_announcements(url):
@@ -125,6 +146,7 @@ def alert_new_announcement_response(new_announcement):
     return response_text
 
 
+# TODO: Both read_config, update_config should be removed and replaced by appropriate method in seetings.py
 def read_config():
     with open('dsit_bot/config/announcements_config.json') as json_file:
         ann_config = json.load(json_file)

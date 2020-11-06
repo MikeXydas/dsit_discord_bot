@@ -45,13 +45,13 @@ def boot_up():
         """
         await ctx.send(create_announcements_response(dsit_announcements, limit))
 
-    @tasks.loop(seconds=10)
+    @tasks.loop(minutes=5)
     async def task_update_dsit_announcements():
         alert_msg = new_announcements_check(parse_dsit_announcements, 'DSIT', dsit_announcements)
         if alert_msg is not None:
             await client.get_channel(general_channel_id).send(alert_msg)
 
-    @tasks.loop(seconds=10)
+    @tasks.loop(minutes=5)
     async def task_update_dit_uoa_announcements():
         alert_msg = new_announcements_check(parse_dit_uoa_announcements, 'DIT', dit_uoa_announcements)
         if alert_msg is not None:

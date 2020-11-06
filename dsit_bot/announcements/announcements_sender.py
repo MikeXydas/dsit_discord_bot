@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import requests
 import logging
 
-from dsit_bot.settings import bot_settings, update_announcements_config
+from dsit_bot.settings import bot_settings, update_announcements_config, initialize_bot_settings
 
 
 @dataclass
@@ -42,7 +42,7 @@ def alert_new_announcement_response(new_announcement):
     if new_announcement.origin == 'DIT':
         new_announcement.origin = 'UoA-DIT'
     response_text = f"```css\n" \
-                    f"New or Updated Announcement from {new_announcement.origin}!\n" \
+                    f"New Announcement from {new_announcement.origin}!\n" \
                     "```\n" \
                     f"->\t**{new_announcement.title}** - *{new_announcement.date}*\n" \
                     f"\t\tLink: <{new_announcement.link}>\n\n"
@@ -81,12 +81,15 @@ def update_announcements(url, parse_announcements, origin):
         logging.warning('Failed to update announcements')
         return False
 
-    old_date = bot_settings['announcements'][f'last_{origin}_announcement']
-    new_date = new_announcements[0].date
+    # Can be removed, used for debugging purposes. It allows us to manually change the config files
+    initialize_bot_settings()
 
-    if old_date == new_date:
+    old_title = bot_settings['announcements'][f'last_{origin}_announcement']
+    new_title = new_announcements[0].title
+
+    if old_title == new_title:
         return None
     else:
-        bot_settings['announcements'][f'last_{origin}_announcement'] = new_date
+        bot_settings['announcements'][f'last_{origin}_announcement'] = new_title
         update_announcements_config()
         return new_announcements

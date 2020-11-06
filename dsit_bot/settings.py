@@ -1,7 +1,6 @@
 """
 We load all the settings from the config files to a global dictionary (not the best design pattern).
-Currently, the setting are loaded in memory when the bot is booting up. i
-In order for the bot to see any change in the config files it must be restarted.
+Currently, the setting are loaded in memory when the bot is booting up.
 """
 
 import json
@@ -19,3 +18,6 @@ def initialize_bot_settings():
         bot_settings['announcements'] = json.load(json_file)
 
 
+def update_announcements_config():
+    with open('dsit_bot/config/announcements_config.json', 'w') as outfile:
+        json.dump(bot_settings['announcements'], outfile)

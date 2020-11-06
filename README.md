@@ -44,12 +44,12 @@ I would be more than happy to send me ideas, issues and PRs
     3. Run the container `docker run -v /path/to/dsit_bot/dsit_bot:/app/dsit_bot <tag>` 
 
 **Note**: For the notification of a new announcement the bot requires a text channel ID that will
-print the announcement. Currently, I have it hardcoded as the channel id of the #general in our server 
-(dsit_bot/boot.py, line 50). This is bad and I should fix it.   
+print the announcement. Currently, I have it hardcoded as the channel id of the #general in my dev-server 
+(dsit_bot/boot.py, line 21). This is bad and I should fix it.   
 For now you should follow the steps below to fix it:
 1. Go to Discord User Settings > Appearance > Enable Developer Mode
 2. Go to you dev server > right click on #general > Copy Id
-3. Paste it in the dsit_bot/boot.py, line 50 (currently the id you must change is `766929768753922051`)
+3. Paste it in the dsit_bot/boot.py, line 21 (currently the id you must change is `766929768753922051`)
 
 Feel free to tell me if there are any mistakes, needed clarifications or in general if you are having
 trouble setting it up.

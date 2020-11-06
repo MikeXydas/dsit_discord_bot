@@ -4,7 +4,9 @@ A discord bot aiming to help us with tasks like notifying, providing info, sendi
 
 ## Current Services
 
-* Notifying in the general chat when a new announcement is posted in the DSIT page
+* Notifying in the #general chat when a new announcement is posted in the DSIT page
+* Notifying in the #general chat when a new announcement, concerning the MSc programs, is posted in the UoA-DIT page
+(idea by [karabasisilias92](https://github.com/karabasisilias92))
 * Presenting the last x announcements using the command `!announcements x`
   
 I would be more than happy to send me ideas, issues and PRs  

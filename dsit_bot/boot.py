@@ -17,10 +17,6 @@ def boot_up():
     # The command prefix will be used to invoke the bot from discord chat
     client = commands.Bot(command_prefix='!')
 
-    # CARE: This must be the id of the channel we want to send the update and is different from server to server
-    # In order for the channel id to be visible you must enable Discord's developer mode.
-    general_channel_id = 766929768753922051
-
     # Read the settings of the bot from the config files
     initialize_bot_settings()
 
@@ -49,13 +45,13 @@ def boot_up():
     async def task_update_dsit_announcements():
         alert_msg = new_announcements_check(parse_dsit_announcements, 'DSIT', dsit_announcements)
         if alert_msg is not None:
-            await client.get_channel(general_channel_id).send(alert_msg)
+            await client.get_channel(bot_settings['general_chat_id']).send(alert_msg)
 
     @tasks.loop(minutes=5)
     async def task_update_dit_uoa_announcements():
         alert_msg = new_announcements_check(parse_dit_uoa_announcements, 'DIT', dit_uoa_announcements)
         if alert_msg is not None:
-            await client.get_channel(general_channel_id).send(alert_msg)
+            await client.get_channel(bot_settings['general_chat_id']).send(alert_msg)
 
     # Initialization completed, run the bot
     client.run(bot_settings['token'])

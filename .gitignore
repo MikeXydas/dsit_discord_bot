@@ -1,5 +1,6 @@
 # Bot Config Files
 /dsit_bot/config/bot_token.tok
+/dsit_bot/config/bot_config.json
 
 # Pycharm files
 .idea/

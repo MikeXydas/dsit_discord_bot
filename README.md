@@ -36,22 +36,20 @@ I would be more than happy to send me ideas, issues and PRs
     1. ``git clone`` and `cd` in the repo
     2. **If you installed poetry** run `poetry install`
     3. (Not tested) **If you did not install poetry**, install the dependencies using `requirements.txt` (CARE: python version >=3.8)
-    4. Create the empty file `dsit_bot/config/bot_token.tok` and paste in it the **Token** we mentioned when creating the bot
+    4. Run `setup.py` (next to this `README.md`) in order to initialize the **Token** and the `#general_chat_id`*
     5. From the root directory of the project run `poetry run python3 main.py`
     6. To test if the bot is running got to your dev server and type in any chat `!announcements` expecting
        the last 5 announcements of DSIT to appear
 3. **(Alternatively) Run the bot on a development docker container**
-    1. Create the empty file `dsit_bot/config/bot_token.tok` and paste in it the **Token** we mentioned when creating the bot
+    1. Run `setup.py` (next to this `README.md`) in order to initialize the **Token** and the `#general_chat_id`*
     2. Build the docker image `docker build . -t <tag>`
     3. Run the container `docker run -v /path/to/dsit_bot/dsit_bot:/app/dsit_bot <tag>` 
 
-**Note**: For the notification of a new announcement the bot requires a text channel ID that will
-print the announcement. Currently, I have it hardcoded as the channel id of the #general in my dev-server 
-(dsit_bot/boot.py, line 21). This is bad and I should fix it.   
-For now you should follow the steps below to fix it:
+\* For the notification of a new announcement the bot requires a text channel ID that will
+print the announcement. 
+For now you should follow the steps below to get it:
 1. Go to Discord User Settings > Appearance > Enable Developer Mode
 2. Go to you dev server > right click on #general > Copy Id
-3. Paste it in the dsit_bot/boot.py, line 21 (currently the id you must change is `766929768753922051`)
 
 Feel free to tell me if there are any mistakes, needed clarifications or in general if you are having
 trouble setting it up.

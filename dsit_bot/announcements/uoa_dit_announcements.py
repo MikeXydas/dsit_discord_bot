@@ -57,7 +57,7 @@ def parse_dit_uoa_announcements(url):
     def parse_announcement(announcement):
         # Title and Link parsing
         title_link = announcement.find('h5').find('a')
-        link = url + '/' + title_link['href'].split('/')[-1]
+        link = "https://www.di.uoa.gr" + title_link['href']
         title = title_link.contents[0]
 
         # Date Parsing

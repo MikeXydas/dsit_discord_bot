@@ -17,7 +17,7 @@ def boot_up():
     # The command prefix will be used to invoke the bot from discord chat
     client = commands.Bot(command_prefix='!')
 
-    # Read the settings of the bot from the config files
+    # Read the settings of the bot from the config files, accessible from settings.bot_settings global dictionary
     initialize_bot_settings()
 
     # Read current DSIT announcements
